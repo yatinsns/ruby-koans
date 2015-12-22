@@ -211,6 +211,10 @@ module Neo
     PROGRESS_FILE_NAME = '.path_progress'
 
     def add_progress(prog)
+      @_contents = progress
+      # return if already added to progress
+      return if  prog.to_i == @_contents.last.to_i
+
       @_contents = nil
       exists = File.exists?(PROGRESS_FILE_NAME)
       File.open(PROGRESS_FILE_NAME,'a+') do |f|
