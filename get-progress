@@ -1,0 +1,12 @@
+#!/usr/bin/env ruby
+
+PROGRESS_FILE_NAME = '.path_progress'
+
+contents = []
+if File.exists?(PROGRESS_FILE_NAME)
+  File.open(PROGRESS_FILE_NAME,'r') do |f|
+    contents = f.read.to_s.gsub(/\s/,'').split(',')
+  end
+end
+
+print contents.last
