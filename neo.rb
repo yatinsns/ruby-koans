@@ -210,10 +210,6 @@ module Neo
 
     PROGRESS_FILE_NAME = '.path_progress'
 
-    def update_commit_message(prog)
-      `echo "Finish koan #{prog}?" > .gitmessage.txt` unless prog.to_i == progress.last.to_i
-    end
-
     def add_progress(prog)
       # return if already added to progress
       return if  prog.to_i == progress.last.to_i
@@ -247,7 +243,6 @@ module Neo
       else
         @failed_test = step
         @failure = step.failure
-        update_commit_message(@pass_count)
         add_progress(@pass_count)
         @observations << Color.red("#{step.koan_file}##{step.name} has damaged your karma.")
         throw :neo_exit
