@@ -15,6 +15,7 @@
 #
 def triangle(a, b, c)
   # WRITE THIS CODE
+  return :equilateral if a == b and b == c
 end
 
 # Error class used in part 2.  No need to change this code.
