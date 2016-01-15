@@ -43,7 +43,7 @@ def score(dice)
       when 5
        sum += (value / 3) * 500 + (value % 3) * 50
       else
-       sum += (value / 3) * 100 * value
+       sum += (value / 3) * 100 * key
     end
   end
   sum
