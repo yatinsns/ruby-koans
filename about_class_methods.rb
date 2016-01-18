@@ -14,12 +14,12 @@ class AboutClassMethods < Neo::Koan
   end
 
   def test_classes_are_objects_too
-    assert_equal __, Dog.is_a?(Object)
+    assert_equal true, Dog.is_a?(Object)
   end
 
   def test_objects_have_methods
     fido = Dog.new
-    assert fido.methods.size > _n_
+    assert fido.methods.size > 0
   end
 
   def test_classes_have_methods
